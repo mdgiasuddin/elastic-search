@@ -1,7 +1,7 @@
 package com.example.elasticsearchdemo.services;
 
 import com.example.elasticsearchdemo.documents.Person;
-import com.example.elasticsearchdemo.repositories.PersonRepository;
+import com.example.elasticsearchdemo.repositories.elastic.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

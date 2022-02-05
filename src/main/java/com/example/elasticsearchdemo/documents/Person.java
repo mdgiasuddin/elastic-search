@@ -1,5 +1,6 @@
 package com.example.elasticsearchdemo.documents;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -12,6 +13,7 @@ import static com.example.elasticsearchdemo.constants.Indices.PERSON_INDEX;
 @Data
 @Document(indexName = PERSON_INDEX)
 @Setting(settingPath = "static/es-setting.json")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
 
     @Id
@@ -19,5 +21,11 @@ public class Person {
     private String id;
 
     @Field(type = FieldType.Text)
-    private String name;
+    private String firstName;
+
+    @Field(type = FieldType.Text)
+    private String lastName;
+
+    @Field(type = FieldType.Integer)
+    private Integer age;
 }
